@@ -9,7 +9,7 @@ ENV PYTHONUNBUFFERED 1
 # Set the working directory in the container
 WORKDIR /DRF
 
-COPY DRF/  ./DRF
+COPY drf/  ./drf
 COPY manage.py .
 COPY pyproject.toml .
 COPY poetry.lock .

@@ -21,6 +21,5 @@ services:
     networks:
       - drf
 
-  volumes:
-    db:
-      driver:local
+volumes:
+  db:
