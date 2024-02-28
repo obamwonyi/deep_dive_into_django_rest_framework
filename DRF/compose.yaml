@@ -1,0 +1,25 @@
+version: '3.8'
+
+
+services:
+
+  web:
+    container_name: drf
+    build: .
+    ports:
+      - "8000:8000"
+    
+    command: poetry run python manage.py runserver 0.0.0.0:8000
+    environment:
+      - POSTGRES_DB=drf_db
+      - POSTGRES_USER=drf_admin
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - .:/DRF
+    networks:
+      - drf
+
+# setting the external network to listed to
+networks:
+  drf:
+    external: true
